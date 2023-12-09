@@ -12,7 +12,8 @@ def find_password():
             if website_entry.get() == key:
                 count +=1
                 value = json_data[website_entry.get()]["password"]
-                messagebox.showinfo(title="Details", message=f"Email_id/User_name:{email_entry.get()}\nPassword:{value}")
+                email = json_data[website_entry.get()]["email"]
+                messagebox.showinfo(title="Details", message=f"Email_id/User_name:{email}\nPassword:{value}")
         if count == 0:
             messagebox.showerror(title="ERROR", message="This website does n't exist in the database")
 
